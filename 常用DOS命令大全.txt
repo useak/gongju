@@ -1,0 +1,662 @@
+第1、最常用的命令
+
+　　cd　　　　　改变当前目录　　　　　　　sys 　　制作DOS系统盘 
+
+　　copy　　　　拷贝文件　　　　　　　　　del 　　删除文件 
+
+　　deltree　 　删除目录树　　　　　　　　dir 　　列文件名 
+
+　　diskcopy　　制磁盘　　　　　　　　　　edit　　文本编辑 
+
+　　format 　　 格式化磁盘　　　　　　　　md　　　建立子目录 
+
+　　mem 　　　　查看内存状况　　　　　　　type　　显示文件内容 
+
+　　rd　　　　　删除目录　　　　　　　　　ren 　　改变文件名 
+
+　　记得多少啊，忘了就去上课看看，下面四个命令是新的，给出命令格式，你自己试试看，学电脑重要的就是摸索。 
+
+　　cls 　　　　清屏 
+
+［适用场合］　　屏幕上太乱了，或是屏幕上出现乱码了， 清除屏幕上显示内容但不
+　　　　　　　　影响电脑内部任何信息 
+
+［用　　法］　　cls　 回车 
+
+　　move 　　　 移动文件，改目录名　 
+
+［适用场合］　　移动文件到别的目录 
+
+［用　　法］　　move [文件名] [目录]　　　　　　　 移动文件至新目录下 
+
+　　　　　　　　move [目录名] [目录名] 　　　　　　改目录名 
+
+
+［例　　子］　　c:\>move c:\autoexec.bat c:\old  
+
+　　　　　　　　移动autoexec.bat文件至old目录下 
+
+　　　　　　　　c:\>move c:\config.sys c:\temp  
+
+　　　　　　　　移动config.sys文件至old目录下 
+
+
+　　more　　　　分屏显示 
+
+［适用场合］　　当输出很多一屏显示不下时采用，几乎适合所有命令，尤其是type
+　　　　　　　　等命令时很有用。 使用more时磁盘不能有写保护，也不适合光驱。 
+
+［用　　法］　　type [文件名] | more 　　　　　　　分屏显示文件内容 
+
+　　　　　　　　more < [文件名]　　　　　　　　　　分屏显示文件内容 
+
+
+［例　　子］　　C:\>type msdos.w40 | more 
+
+　　xcopy 　　　拷贝目录和文件 
+
+［适用场合］　　在进行连同子目录一起拷贝时很有用，在拷贝大量文件时比COPY命令
+　　　　　　　　要快得多 
+
+［用　　法］　　xcopy [文件名] [目录] 　　　　　　将指定文件拷贝到指定目录 
+
+　　　　　　　　xcopy [源目录] [目的目录]　　将源目录连子目录考到目的目录下 
+
+　　　　　　　　xcopy *.* [目录] /s　　　将文件与非空子目录拷贝到指定目录 
+
+　　　　　　　　其它常用参数还有: v 拷贝后校验，会影响速度
+　　　　　　　 　　　　　　　　 　e 与s 相似，但即使子目录是空的也会拷贝。
+第2、比较常用的命令
+
+　　attrib　　　设置文件属性 
+
+［适用场合］　　想对文件做较特殊的处理时 
+
+［用　　法］　　attrib 显示所有文件的属性 
+
+　　　　　　　　attrib +r或-r [文件名] 设置文件属性是否为只读 
+
+　　　　　　　　attrib +h或-h [文件名] 设置文件属性是否隐含 
+
+　　　　　　　　attrib +s或-s [文件名] 设置文件属性是否为系统文件 
+
+　　　　　　　　attrib +a或-a [文件名] 设置文件属性是否为归档文件 
+
+　　　　　　　　attrib /s 设置包括子目录的文件在内的文件属性 
+
+［例　　子］　　C:\TEST>attrib +r wina20.386 
+
+　　　　　　　　C:\>attrib +h *.* /s  隐含所有文件 
+
+　　date 　　　 显示及修改日期 
+
+［适用场合］　　想知道或修改时间和日期 
+
+［用　　法］　　date 显示和改变当前日期 
+
+［例　　子］　　C:\>date 09-20-1996  将日期改为1996年9月20日 
+
+　　　　　　　　C:\>date  
+
+　　　　　　　　　　Current date is Tue 08-20-1996 
+
+　　　　　　　　　　Enter new date (mm-dd-yy):09-20-1996 
+
+　　　　　　　　　　按月-日-年的顺序修改当前日期 直接按回车键忽略修改日期 
+
+
+　　lable 　　　设置卷标号 
+
+［适用场合］　　用来为磁盘做个标记 
+
+［用　　法］　　label 显示磁盘卷标 
+
+　　　　　　　　label [盘符] [卷标名] 设定指定盘的卷标 
+
+［例　　子］　　C:\>label  
+　　　　　　　　Volume in drive C is WANG 
+　　　　　　　　Volume Serial Number is 2116-1DD0 
+　　　　　　　　volume label (11 characters,Enter for none)? 
+　　　　　　　　可以输入卷标，直接回车后 
+　　　　　　　　Delete current volume label (Y/N)? 
+　　　　　　　　按y删除旧卷标，按n不更改 
+
+　　defrag　　　磁盘碎片整理 
+
+［适用场合］　　磁盘读写次数很多，或磁盘使用时间很长了，可能需要使用这条命令
+　　　　　　　　整理磁盘。磁盘碎片并不是指磁盘坏了，而只是由于多次的拷贝和删
+　　　　　　　　除文件后，磁盘使用会很不连贯，致使速度变慢。 
+
+［用　　法］　　1. C:\>defrag  
+
+　　　　　　　　2. 选择要整理的磁盘
+
+
+　　doskey　　　调用和建立DOS宏命令 
+
+［适用场合］　　经常需要输入重复的命令时，有非常大的用处 
+
+［用　　法］　　doskey　 
+
+　　　　　　　　将dosk
+
+ey驻留内存，开辟出缓冲区，以后输入的命令都将保存在缓冲
+　　　　　　　　区中，可以随时调用 
+
+　　　　　　　　doskey [宏命令名]=[命令名] 　 
+
+　　　　　　　　将宏命令定义为命令，以后输入宏命令，电脑就会执行相应的命令 
+
+　　　　　　　　doskey /reinstall　　　　　　重新安装doskey 
+
+　　　　　　　　doskey /bufsize= 　　　　　　设置缓冲区的大小 
+
+　　　　　　　　doskey /macros 　　　　　　　显示所有doskey宏 
+
+　　　　　　　　doskey /history 　　　 　　　显示内存中所有命令 
+
+　　　　　　　　doskey /insert|overstrike 设置新键入的字符是否覆盖旧的字符 
+
+［例　　子］　　C:\>DOSKEY  
+　　　　　　　　C:\>dir 
+　　　　　　　　C:\>copy C:\temp\*.* a: 
+　　　　　　　　C:\>del c:\temp\*.* 
+　　　　　　　　C:\>copy b:\*.* c:\temp 
+
+　　　　　　　　上述四条命令都已被保存，用光标控制键的上下可以依次选择使用或
+　　　　　　　　修改, 也可以用F7键列出保存的所有命令
+
+　　　　　　　　C:\>doskey di=dir/w/p  定义di为宏命令，意思是执行dir/w/p 
+
+　　fdisk 　　　硬盘分区 
+
+［建　　议］　　只有硬盘被很利害的病毒感染时，或是一块新硬盘才需要分区，最好
+　　　　　　　　请懂行的人指导。硬盘都需经过低级格式化，分区，格式化三个步骤
+　　　　　　　　才可使用，成品电脑内的硬盘都已经做过这些加工了。 
+
+［用　　法］　　输入fdisk后按回车即可进入提示界面 
+
+
+　　emm386　　　扩展内存管理 
+
+［建　　议］　　这条命令比较复杂，在第五章中系统配置里将详细介绍 
+
+lh/loadhigh　　 将程序装入高端内存 
+
+［适用场合］　　这条命令一般用在autoexec.bat中，当有些软件需要的基本内存很大
+　　　　　　　　时，它会有用 
+
+［用　　法］　　lh [程序] 　 
+
+　　　　　　　　将程序装入高端内存 使用此命令时，config.sys文件中需有下面两
+　　　　　　　　条语句。 device=emm386.exe dos=umb 
+
+　　　　　　　　lh [程序] /l:区号 　　　将程序装入指定的umb区 
+
+　　　　　　　　lh /s 　　　　　　　　　一般是由memmaker专用 
+
+［例　　子］　　C:\MOUSE\>lh mouse  　将鼠标驱动程序装入高端内存 
+
+　memmaker　　　内存优化管理 
+
+［适用场合］　　这个命令现在已经很少用了，在当年DOS流行时，想玩游戏可少不了 
+　　　　　　　　它，它可以腾出许多基本内存供游戏使用，只需安装一次即可 
+
+［用　　法］　　1. C:\>memmaker  
+
+　　　　　　　　2. 回车继续，F3退出 
+
+　　　　　　　　3. 选择手动安装和自动安装，直接回车表示自动安装（回车得了） 
+
+　　　　　　　　4. 选择是否有程序需要扩充内存，可用空格键选择，Yes表示需要，
+　　　　　　　　No不需要，按回车键即可。 
+
+　　　　　　　　5. 程序自动检测硬盘内是否安装了WINDOWS 
+
+　　　　　　　　6. 软驱中若有软盘则应将其取出，然后按回车键，电脑将重新起动
+　　　　　　　　两次，不要中断，只需按回车键。 
+
+　　　　　　　　（其实很简单，一直按回车键就行了，呵呵） 
+
+ 
+
+　　msd　　　　 系统检测 
+
+［适用场合］　　用于检查系统信息 
+
+［用　　法］　　1. C:\>msd　回车后可见到，在每个选项旁边加了注解，表
+　　　　　　　　示该按钮的功用 
+
+　　　　　　　2. 选择需查询的项目，比如选第一个Computer,将会弹出一个对话框
+　　　　　　　　显示电脑的一些基本信息。你可以试试其他的选项，看看有什么用。
+　　　　　　　3. 按Alt+F键激活下拉菜单后, 选择"Exit"项退出。 
+
+　undelete　　　恢复被删除的文件 
+
+［适用场合］　　当不小心删错了文件时，它可以用得上。 
+
+　　　　　　　　DOS删除文件时，只是将文件从分配表中去除，在磁盘存储区内将文
+　　　　　　　　件名的第一个字母删除，文件内容并未马上从磁盘中删除，所以能恢
+　　　　　　　　复。 
+
+［用　　法］　　undelete　　　　　　　恢复已删除的文件 
+
+　　　　　　　　undelete /all　　　恢复文件且不再询问是否恢复，　　　　　　
+　　　　　　　　以"#%&-0123456789abcdefghijklmnopqrstuvwxyz"的顺序为第一个
+　　　　　　　　字母来恢复文件 
+
+　　　　　　　　undelete /list　　列可恢复的文件名 
+
+　　　　　　　　undelete /s 　　　可将undelete驻留内存，但几乎没人这样使用 
+
+
+　prompt　　　设置提示符 
+
+［适用场合］　　当你厌烦了c:\>的提示符或者您想使您的提示符与众不同时，您可以
+　　　　　　　　试一试，非常有趣的DOS命令，可以随时显示时间与日期。 
+
+［用　　法］　　prompt $p$g 以当前目录名和>号为提示符，这是最常用的提示符 
+
+　　　　　　　　prompt $t 表示时间　　　　　　prompt $d 表示日期 
+
+　　　　　　　　prompt $$ 表示$ 　　　　　　　prompt $q 表示= 
+
+　　　　　　　　prompt $v 表示当前版本　　　　prompt $l 表示< 
+
+　　　　　　　　prompt $b 表示| 　　　　　　　prompt $h 表示退位符 
+
+　　　　　　　　prompt $e 表示Esc代表的字符 　prompt $_ 表示回车换行 
+
+
+
+
+
+［例　　子］　　C:\DOS>prompt wang$g  将wang>作为提示符 
+
+　　　　　　　　WANG>prompt $t$d$g  　使用时间、日期和>号做为提示符 
+
+　　　　　　　　0:01:07.77Thu 08-29-1996>prompt $p$g  
+
+　　　　　　　　C:\DOS> 
+
+　restore　　　恢复已备份的文件 
+
+［建　　议］　　如果以前用backup做过文件备份，则当原文件损坏时可以用它来恢复
+　　　　　　　　文件。 
+
+　　　　　　　　将用backup命令备份的磁盘中的文件恢复到另一磁盘中，备份磁盘中
+　　　　　　　　应有backup.00X和control.00X这两条文件。 
+
+［用　　法］　　restore [备份盘符] [目标盘符] 
+
+　　　　　　　　将备份盘上备份文件恢复到指定盘上 
+
+　　　　　　　　restore /s 　　　　将备份文件包括子目录都恢复到指定盘上 
+
+　　　　　　　　restore /p 　　　　让用户判断是否恢复文件 
+
+　　　　　　　　restore /b:日期　　恢复日期以前的文件 
+
+　　　　　　　　restore /a:日期　　恢复日期之后的文件 
+
+　　　　　　　　restore /l:时间　　恢复时间之前的文件 
+
+　　　　　　　　restore /e:时间　　恢复时间之后的文件 
+
+　　　　　　　　restore /m 　　　　只恢复上次备份后修改过的文件 
+
+　　　　　　　　restore /n 　　　　只恢复上次备份后已删 除的文件 
+
+　　　　　　　　restore /d 　　　　只显示要恢复的文件名 
+
+［例　　子］　　C:\DOS>restore a: c:  
+　　　　　　　　Insert backup diskette 01 in drive A: 
+　　　　　　　　Press any key to continue . . . 
+
+　　　　　　　　在A驱中放入第一张备份盘，按任意键即可，恢复完第一张后，按顺
+　　　　　　　　序放入其它盘即可。 
+
+　　　　　　　　当您用上述命令不能正确恢复文件时请用： 
+
+　　　　　　　　C:\DOS>restore a: c:\ /s  
+
+
+　　time　　　　显示及修改时间 
+
+［适用场合］　　用于显示及修改时间，用法同date 
+
+［例　　子］　　C:\DOS>time  
+　　　　　　　　Current time is 12:15:26.04a 
+　　　　　　　　Enter new time: 11:20:20.00p 
+
+　　　　　　　　按时:分顺序输入时间，再加上下午(a/p)即可 直接按ENTER键可忽略
+　　　　　　　　修改时间。 
+
+　　set 　　　　设置环境变量 
+
+［适用场合］　　设置声卡和路径等时用到 
+
+［用　　法］　　set [环境变量]=[字符串] 　　 
+
+　　　　　　　　这条命令常常用在autoexec.bat中 
+
+［例　　子］　　C:\>set blaster=a220 i5 d1　　　　　设置声卡的参数 
+
+　　　　　　　　C:\>set path=c:\dos　　　　　　　　　path c:\dos含义相同 
+
+　smartdrv　　　设置磁盘加速器 
+
+［建　　议］　　它可以提高硬盘访问速度，最好在autoexec.bat文件中加载吧。 
+
+［用　　法］　　smartdrv /x 
+
+　　　　　　　　执行并驻留内存，开辟磁盘加速缓存区，并屏蔽所有驱动器缓存，是
+　　　　　　　　较常用的方法（一般用这个命令就够了） 
+
+　　　　　　　　smartdrv /c 　　　　　　将缓存内的信息都写入硬盘 
+
+　　　　　　　　smartdrv /e: 数字 　　　设置一次移动的信息量 
+
+　　　　　　　　smartdrv /b: 数字 　　　设置预先读取的缓冲区大小
+第3、不常用的命令
+
+　append　　　　设置非执行文件的路径 
+
+［适用场合］　　当您无法在多个目录中寻找到自己输入的文稿时，可以试一试这个命
+　　　　　　　　令，用法类似path。 
+
+［用　　法］　　append [路径];[路径] 
+
+
+［例　　子］　　C:\>append c:\test  
+
+　　　　　　　　设置寻找非可执行文件路径为c:\test如果该目录下有文件1.txt时，
+　　　　　　　　在其它目录下调用1.txt找不到时，可自动寻找到c:\test目录。 
+
+　　　　　　　　D:\UCDOS>edit 1.txt 可找到C:\test\1.txt文件 
+
+　debug 　　　　程序调试命令 
+
+［建　　议］　　如果你学过汇编语言，那你应该会使用debug，如果没学过，最好别
+　　　　　　　　使用 
+
+［用　　法］　　debug [文件名] 
+
+　diskcomp　　　比较磁盘 
+
+［适用场合］　　比较两张盘是否相同，没想到什么时候会用到，在比较用diskcopy拷
+　　　　　　　　贝的两张盘，为什么不用diskcopy/v校验呢？ 
+
+［用　　法］　　diskcomp [盘符1] [盘符2] 比较盘1和盘2 
+
+　　　　　　　　diskcomp /1 只比较磁盘的第一面 
+
+　　　　　　　　diskcomp /8 只比较没磁道的前8个扇区 
+
+［例　　子］　　C:\>diskcomp a: a: 
+　　　　　　　　在同一软驱中比较两张盘 
+
+　　　　　　　　Insert FIRST diskette in drive A: 
+　　　　　　　　放入第一张盘 
+
+　　　　　　　　Press any key to continue . . . 
+
+
+
+
+
+　　　　　　　　Comparing 80 tracks 18 sectors per track, 2 side(s) 　
+
+
+
+
+　Insert SECOND diskette in drive A: 
+　　　　　　　　放入第二张盘 
+
+　　　　　　　　Press any key to continue . . . Compare OK 
+　　　　　　　　比较未发现不同 
+
+　　　　　　　　Compare another diskette (Y/N) ?n 
+　　　　　　　　是否比较其它盘，选y继续比较，选n停止 
+
+
+　expand　　　　解压工具 
+
+［适用场合］　　微软公司软件原始安装盘中有许多后缀以"_"结尾的压缩文件，可以 
+　　　　　　　　用它解压，解除您因为少数几个文件丢失造成的麻烦。 
+
+［用　　法］　　expand [源文件名] [目的文件] 
+
+
+［例　　子］　　C:\>expand a:vsafe.co_ c:\dos\vsafe.com 
+
+　　　　　　 　解压vsafe.co_为vsafe.com文件 
+
+　　　　　　　　Microsoft (R) File Expansion Utility Version 2.10 　　　
+　　　　　　　　Copyright (C) Microsoft Corp 1990-1993. All rights 　　　
+　　　　　　　　reserved. 
+
+　　　　　　　　Expanding a:vsafe.co_ to c:\dos\vsafe.com. a:vsafe.co_: 
+　　　　　　　　33046 bytes expanded to 62576 bytes, 89% increase. 
+
+　　　　　　　　C:\DOS> 
+
+　fasthelp　　　快速显示帮助信息 
+
+［建　　议］　　可以看看所有的命令，对于单个的命令，还不如在命令名后加/?参数
+　　　　　　　　方便 
+
+［用　　法］　　fasthelp 　　　　　　列出所有DOS命令的用处 
+
+　　　　　　　　fasthelp [命令名]　　显示命令的用处，等价于 [命令名]/? 
+
+　　　fc　　　　文件比较 
+
+［建　　议］　　也许对于大多数人是永远不会用到它的 
+
+［用　　法］　　fc [文件名1] [文件名2] 　　　　比较两文件的不同 　　　　　　
+　　　　　　　　参数还有: a c l Lbn n t w nnnn 
+
+［例　　子］　　C:\TEST>fc a.bat b.bat  
+　　　　　　　　Comparing files A.BAT and B.BAT 
+　　　　　　　　***** A.BAT 
+　　　　　　　　choice /c:dme defrag,mem,end 
+　　　　　　　　if errorlevel 3 goto defrag 
+　　　　　　　　if errorlevel 2 goto mem 
+　　　　　　　　if errotlevel 1 goto end 
+　　　　　　　　***** B.BAT choice /c:dme defrag,mem,end 
+　　　　　　　　***** C:\TEST> 
+
+
+　interlnk　　　启动简易网客户机 
+
+［适用场合］　　如果有两台电脑可以通过它和intersvr联成简易的网络，这是条很有
+　　　　　　　　用的命令，但不常用 
+
+［用　　法］　　 DOS新增支持网络的功能， 
+　　　　　　　　它可以使两台电脑通过并口线或串口线相联组成简易的网络 
+　　　　　　　　使用interlnk 必须在config.sys中增添一句： 
+　　　　　　　　device=c:\dos\interlnk 
+　　　　　　　　并口线的两头都应是25针公接头，针之间的连接如下图：对应 
+　　　　　　　　p2------------------------p15 
+　　　　　　　　p3------------------------p13 
+　　　　　　　　p4------------------------p12 
+　　　　　　　　p5------------------------p10 公接头指接头为带针的 
+　　　　　　　　p6------------------------p11 母接头指接头为带孔的 
+　　　　　　　　p15-----------------------p2 
+　　　　　　　　p13-----------------------p3 
+　　　　　　　　p12-----------------------p4 
+　　　　　　　　p10-----------------------p5 
+　　　　　　　　p11-----------------------p6 
+　　　　　　　　p25-----------------------p25 地线 
+
+
+［例　　子］　　C:\DOS\>interlnk Port-LPT1 
+
+　　　　　　　　this Computer 　　　Other Computer 
+
+　　　　　　　　　(Client) 　　　　　　(Server) 
+
+　　　　　　　　　 ---------------------------------------- 
+
+　　　　　　　　　　　 E: 　　equals 　　A: 
+
+　　　　　　　　　 　　F: 　　equals 　　C: 
+
+　　　　　　　　在客户机中E盘即为服务机的A盘，F盘为服务机的C盘 
+
+　intersvr　　　启动简易网服务器 
+
+［适用场合］　　使用它，电脑就成了服务器了（只限与DOS提供的简易网） 
+
+［用　　法］　　intersvr　　　　　　　启动服务机 
+
+　　　　　　　　intersvr /lpt:1　　　启动服务机,用lpt1口作为数据传输口 
+
+　　　　　　　　intersvr /com:1　　　启动服务机,用com1口作为数据传输口 
+
+　　　　　　　　参数还有 x baud: b v rcopy （参见interlnk) 
+
+［例　　子］　　C:\DOS>intersvr  
+
+　　qbasic　　　启动Basic集成环境 
+
+［建　　议］　　也许对于大多数人是永远不会用到它的 
+
+［用　　法］　　如果会qbasic语言，那么可以利用它编写自己的程序。edit.com必须
+　　　　　　　　有它才可用。 
+
+　　　　　　　　qbasic　　　　　起动basic语言环境 
+
+　　　　　　　　qbasic/editor　以全屏方式编辑语言 
+
+　　　　　　　　参数还有： b g h mbf nohi run 
+
+［例　　子］　　C:\DOS>qbasic  
+
+ 
+
+
+　setver 　　 　设置版本 
+
+［适用场合］　　当希望使用其它版本的dos命令时可以用它来欺骗电脑。在高版本 　
+　　　　　　　　DOS中，某些旧版本程序需要DOS3.3时，可用setver来设置 
+
+［用　　法］　　使用时一般在config.sys中加入 device=setver.exe 
+
+　　　　　　　　setver　　　　　　　　　　显示文件的版本 
+
+　　　　　　　　setver [文件名] n.nn 　　设置指定文件的版本号 
+
+
+［例　　子］　　C:\DOS>setver  
+　　　　　　　　KERNEL.EXE 5.00 
+　　　　　　　　DOSOAD.SYS 5.00 
+　　　　　　　　EDLIN.EXE 5.00 
+　　　　　　　　BACKUP.EXE 5.00 
+　　　　　　　　ASSIGN.COM 5.00 
+　　　　　　　　EXE2BIN.EXE 5.00 
+　　　　　　　　JOIN.EXE 5.00 
+　　　　　　　　RECOVER.EXE 5.00 
+　　　　　　　　WINWORD.EXE 4.10 
+　　　　　　　　C:\> 
+
+　　　　　　　　若程序AAA.exe必须在MS-DOS3.3下执行，则键入 
+
+　　　　　　　　C:\DOS>setver aaa.exe 3.30  
+
+　　　　　　　　又如net5.exe仅在MS-DOS5.0下执行，则在config.sys中加入　　　
+　　　　　　　　device=setver.exe后也可在Ms-DOS6.22下运行。 
+
+　　share　　　　文件共享 
+
+［建　　议］　　只有在软件声明必须要运行它时才用 
+
+［用　　法］　　可在config.sys中加入 install=share.exe 也可直接运行 　　　
+　　　　　　　　参数有 f l 
+
+　　subst　　　　路径替换 
+
+［建　　议］　　一个非常有趣的命令，如果经常用光碟软件，可能有用。 
+
+［用　　法］　　subst 　　　　　　　　　　显示当前的替代路径 
+
+　　　　　　　　subst [盘符] [路径]　　　　　　　　　　　　　　　　　　　　
+　　　　　　　　将指定的路径替代盘符，该路径将作为驱动器使用 
+
+　　　　　　　　subst /b　　　　　　　　　解除替代 
+
+［例　　子］　　C:\DOS>subst a: c:\temp  用c盘temp目录替代a盘 
+
+　　　　　　　　C:\>subst a: /d 　　　　　解除替代 
+
+
+　　tree 　　 　显示命令树结构 
+
+［适用场合］　　查看所有的子目录 
+
+［用　　法］　　tree [盘符]　　　　显示所有的子目录树 
+
+　　　　　　　　tree /f　　　　　　显示目录时同时显示文件名 
+
+　　　　　　　　tree /a　　　　　　以ASCII码显示目录树 
+
+
+［例　　子］　　C:\WINDOWS>tree /a  
+
+　unformat　　　恢复已被格式化的磁盘 
+
+［建　　议］　　你把有重要信息的软盘格式化了?快用unformat……什么?你用了　　
+　　　　　　　　format /u，那死定了 
+
+［用　　法］　　unformat [盘符] 　　　恢复指定的被格式化的磁盘 
+
+　　　　　　　　unformat /l 　　　　　显示unformat所找到的文件名 
+
+［例　　子］　　C:\WINDOWS>unformat a:  
+
+
+　　vsafe　　　　病毒防护程序 
+
+［建　　议］　　把它装入内存可以随时检测出许多种病毒，是比较有用的。 
+
+［用　　法］　　vsafe　　　　　　　　加载vsafe在内存中 
+
+　　　　　　　　vsafe /u 　　　　　　从内存中去除vsafe 
+
+　　　　　　　　vsafe/ne 　　　　　　将vsafe装入扩充内存 
+
+　　　　　　　　vsafe/nx 　　　　　　将vsafe装入扩展内存 
+
+　　　　　　　　参数还有 Ax Cx n d 
+
+［例　　子］　　C:\>vsafe 
+
+
+　ver　　　 　显示DOS版本 
+
+［例　　子］　　C:\>ver 
+
+　　　　　　　 MS-DOS Version 6.22 
+
+　　　　　　　　C:\> 
+
+　　vol　　　　 显示指定的磁盘卷标号 
+
+［例　　子］　　C:\>vol  
+
+　　　　　　　　Volume in drive C is Wang 
+
+　　　　　　　　Volume Serial Number is 2116-1DD0 
+
+　　　　　　　　C:\> 
+
+
+　　ctty　　　　改变控制设备 
+
+［建　　议］　　用来改变控制的输入输出设备，可以试试这条命令，不过恐怕不会有
+　　　　　　　　什么作用，是DOS中最没用的命令之一 
+
+［用　　法］　　ctty [设备名]　　　　设置控制台 
+
+［例　　子］　　C:\>ctty aux  　　　设置aux为输入输出设备
